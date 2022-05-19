@@ -1,0 +1,36 @@
+﻿@model MVC_forms.Models.Registration
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Register</title>
+</head>
+<body>
+    @Html.LabelFor(y => y.FirstName)
+    @Html.TextBoxFor(y => y.FirstName)
+
+    @Html.LabelFor(y => y.LastName)
+    @Html.TextBoxFor(y => y.LastName)
+
+    @Html.LabelFor(y => y.Address)
+    @Html.TextAreaFor(y => y.Address)
+
+    @Html.LabelFor(y => y.IsActive)
+    @Html.CheckBoxFor(y => y.IsActive)
+
+    @Html.LabelFor(y => y.Gender)
+    <span>Male:</span>@Html.RadioButtonFor(y => y.Gender, "Male")
+    <span>Female:</span>@Html.RadioButtonFor(y => y.Gender, "Female")
+
+    @Html.LabelFor(y=>y.City)
+    @Html.DropDownListFor(y=> y.City, new SelectList(Model.selectedListItems,"Value","Text"))
+
+    <input type="submit"/>
+</body>
+</html>
